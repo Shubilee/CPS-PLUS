@@ -1,0 +1,198 @@
+.footer {
+    background: #171330;
+    padding: 43px 0;
+    z-index: 0;
+
+    &__container {
+        display: flex;
+        justify-content: space-between;
+        align-items: start;
+        color: #fff;
+        @media (max-width:$mobile){
+             flex-direction: column; 
+             align-items: center;
+        }
+    }
+
+    &__icons {
+        display: flex;
+        @media (max-width:$mobile){
+             margin-bottom: 50px; 
+        }
+
+        a {
+            width: 36px;
+            height: 36px;
+            border-radius: 50%;
+            background: linear-gradient(272.62deg, #F829AE 0%, #0116CB 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 25px;
+            transition: 0.5s;
+            &:last-child{
+                margin-right: 0;
+            }
+
+            &:hover {
+                background: linear-gradient(272.62deg, #F829AE 0%, #0116CB 36.13%);
+                // transform: scale(1.2);   
+            }
+        }
+    }
+
+    &__conf {
+        text-decoration: underline;
+        text-transform: uppercase;
+        width: 100%;
+       
+        color: #5D5B94;
+        &:hover{
+            text-decoration: none;
+        }
+       
+    }
+
+    &__logo {
+        
+        & > a{
+            display: block;
+            margin-bottom: 25px;
+            transition: 0.5s;
+            &:hover{
+                transform: scale(1.2);
+            }
+            @media (max-width:$mobile){
+                 text-align: center; 
+            }
+        }
+    }
+
+
+
+    &__menu {}
+
+    &__authorization {
+        display: flex;
+        flex-direction: column;
+        align-items: start;
+
+    }
+
+    &__sign-in {
+        display: flex;
+        align-items: center;
+        padding-top: 10px;
+        margin-bottom: 45px;
+        div{
+            margin-right: 30px;
+        }
+        div:last-child{
+            margin-right: 0;
+        }
+    }
+
+    &__lang {}
+
+    &__log-in {
+        transition: 0.5s;
+        &:hover{
+            transform: scale(1.1);
+        }
+    }
+
+    &__log-out {
+        a {
+                line-height: 100%;
+                border: 1px solid #F01FA1;
+                border-radius: 20px;
+                display: block;
+                padding: 11px 16px;
+                transition: 0.5s;
+        
+                @media (max-width:$tablet) {
+                    margin-right: 0;
+        
+                }
+        
+                &:hover {
+                    background: #F01FA1;
+                    transform: scale(1.1);
+                }
+            }
+    }
+
+    .menu-f {
+       
+        &__body {
+            padding-top: 20px;
+        }
+
+        &__list {
+            display: flex;
+            @media (max-width:$tablet){
+                flex-direction: column;
+            }
+            @media (max-width:$mobile){
+                 flex-direction: row; 
+            }
+            @media (max-width:$mobileSmall){
+                 flex-direction: column; 
+                 align-items: center;
+            }
+        }
+
+        &__item {
+            margin-right: 30px;
+            &:last-child{
+                margin-right: 0;
+            }
+            @media (max-width:$tablet){
+                margin-bottom: 20px;
+            }
+            @media (max-width:$mobileSmall){
+                 margin-right: 0; 
+            }
+        }
+
+        &__link {
+            position: relative;
+            
+                &::after {
+                    content: '';
+                    position: absolute;
+                    transition: 0.5s;
+                    width: 0px;
+                    height: 2px;
+                    bottom: -5px;
+                    left: 0;
+                    background: linear-gradient(272.62deg, #F829AE 0%, #0116CB 100%);
+                }
+            
+                &:hover {
+                    &:after {
+                        width: 40px;
+                    }
+                }
+        }
+    }
+
+    .link {}
+
+    .lang {
+
+        &__menu {}
+
+        &__submenu {}
+    }
+}
+
+
+
+
+
+
+
+
+
+//====================================================================================================

@@ -1,0 +1,304 @@
+//====================================================================================================
+
+//====================================================================================================
+
+//Burger
+
+.icon-menu {
+	display: none;
+	// z-index: 11;
+
+	@media (max-width: $tablet) {
+		display: block;
+		position: absolute;
+		right: 15px;
+		top: 53px;
+		width: rem(30);
+		height: rem(18);
+		cursor: pointer;
+		z-index: 10;
+
+		span,
+		&::before,
+		&::after {
+			content: "";
+			transition: all 0.3s ease 0s;
+			right: 0;
+			position: absolute;
+			width: 100%;
+			height: rem(2);
+			background-color: #FFF;
+		}
+
+		&::before {
+			top: 0;
+		}
+
+		&::after {
+			bottom: 0;
+		}
+
+		span {
+			top: calc(50% - rem(1));
+			width: 50%;
+			left: 0;
+		}
+
+		.menu-open & {
+			span {
+				width: 0;
+			}
+
+			&::before,
+			&::after {}
+
+			&::before {
+				top: calc(50% - rem(1));
+				transform: rotate(-45deg);
+			}
+
+			&::after {
+				bottom: calc(50% - rem(1));
+				transform: rotate(45deg);
+			}
+		}
+	}
+}
+
+.menu__body {
+	@media(max-width: $tablet) {
+		visibility: hidden;
+		position: fixed;
+		left: 100%;
+		transition: 0.5s;
+		background: #171230;
+		width: 100%;
+		max-height: 560px;
+		top: 0px;
+		padding: 80px 0;
+
+		.menu__list {
+			flex-direction: column;
+		}
+
+	}
+}
+
+.menu-open {
+	.menu__body {
+		left: 0;
+		visibility: visible;
+		z-index: 9;
+	}
+
+}
+
+.header {
+	position: relative;
+	color: #fff;
+	margin-bottom: 20px;
+
+	&__container {
+
+		@include adaptiveValue("padding-top", 25, 35, );
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+	}
+
+	&__logo {
+		z-index: 10;
+		transition: 0.5s;
+		&:hover{
+			transform: scale(1.2);
+		}
+	}
+
+	&__menu {}
+
+	&__sign-in {
+		display: flex;
+		align-items: center;
+
+		@media (max-width:$tablet) {
+			flex-direction: column;
+		}
+	}
+
+	&__lang {
+		margin-right: 30px;
+
+		@media (max-width:$tablet) {
+			margin-right: 0;
+			margin-bottom: 50px;
+		}
+	}
+
+	&__log-in {
+		margin-right: 30px;
+		transition: 0.5s;
+
+		@media (max-width:$tablet) {
+			margin-right: 0;
+			margin-bottom: 30px;
+		}
+
+		&:hover {
+			transform: scale(1.1);
+		}
+	}
+
+	&__log-out {
+		a {
+			line-height: 100%;
+			border: 1px solid #F01FA1;
+			border-radius: 20px;
+			display: block;
+			padding: 11px 16px;
+			transition: 0.5s;
+
+			@media (max-width:$tablet) {
+				margin-right: 0;
+
+			}
+
+			&:hover {
+				background: #F01FA1;
+				transform: scale(1.1);
+			}
+		}
+	}
+}
+
+.menu {
+
+	&__icon {}
+
+	&__body {
+		display: flex;
+		align-items: center;
+
+		@media (max-width:$tablet) {
+			padding-top: 140px;
+			text-align: center;
+			flex-direction: column;
+		}
+	}
+
+	&__list {
+		display: flex;
+
+		@media (max-width:$tablet) {
+			flex-direction: column;
+		}
+
+		li {
+			margin-right: 30px;
+
+			a {
+				position: relative;
+
+				&::after {
+					content: '';
+					position: absolute;
+					transition: 0.5s;
+					width: 0px;
+					height: 2px;
+					bottom: -5px;
+					left: 0;
+					background: linear-gradient(272.62deg, #F829AE 0%, #0116CB 100%);
+				}
+
+				&:hover {
+					&:after {
+						width: 40px;
+					}
+				}
+			}
+
+			&:last-child {
+				margin-right: 160px;
+			}
+
+			@media (max-width:$tablet) {
+				margin-right: 0;
+				margin-bottom: 30px;
+
+				&:last-child {
+					margin-right: 0;
+				}
+			}
+		}
+	}
+
+	&__item {}
+
+	&__link {}
+}
+
+.icon-menu {}
+
+.link {}
+
+.lang {
+
+	&__menu {
+		position: relative;
+
+
+		&::after {
+			content: '';
+			position: absolute;
+			cursor: pointer;
+			width: 12px;
+			height: 8px;
+			bottom: 3px;
+			left: 20px;
+			background: url(../img/header/arrow.png) center/cover no-repeat;
+		}
+
+
+		&:hover {
+			&:after {
+				background: url(../img/header/arrow1.png) center/cover no-repeat;
+			}
+
+			.lang__submenu {
+				cursor: pointer;
+				visibility: visible;
+				opacity: 1;
+			}
+
+
+		}
+	}
+
+	&__submenu {
+		color: #5D5B93;
+
+		li {
+			a {
+				display: block;
+				
+				padding: 15px 0;
+				
+
+				&:hover{
+					color: #fff;
+				}
+
+			}
+		}
+		position: absolute;
+		top: 100%;
+		visibility: hidden;
+		opacity: 0;
+		transition: 0.5s;
+
+		@media (max-width:$tablet) {
+			left: -5px;
+		}
+
+
+	}
+}
